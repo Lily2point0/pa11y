@@ -1,43 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- Missing lang attribute generates an error -->
+<html>
 <head>
 
 	<meta charset="utf-8"/>
-	<title>Hide Selectors</title>
+
+	<!-- Page title generates a notice -->
+	<title>Page Title</title>
 
 </head>
-<body style="background:#fff">
-	<div id="hide-parent">
+<body>
 
-		<!-- Bad contrast -->
-		<h1 style="color:#fff" class="heading">Hello World</h1>
+	<div id="example-hide-elements">
 
-		<!-- Heading with no content -->
-		<h2></h2>
+		<!-- Anchor without text generates an error-->
+		<a href="#"></a>
+		<a href="#"></a>
+		<a href="#"></a>
 
-		<!-- No alt attribute -->
-		<img src="/path/to/image.jpg" />
+		<img src="/path/to/image.jpg" alt=""/>
 
-		<!-- Link only contains image and image has no alt attribute -->
-		<a href="http://pa11y.org/">
-			<img src="http://pa11y.org/false-img.jpg"/>
-		</a>
+		<!-- Missing alt attribute generates an error -->
+		<img src="/path/to/image.jpg"/>
 
-		<!-- No link content -->
-		<a href="http://www.nature.com/"></a>
-
-		<!-- No title attribute -->
-		<iframe src="http://pa11y.org/"></iframe>
-
-		<!-- Duplicate ID -->
-		<p id="para">foo</p>
-		<p id="para">bar</p>
-
-		<form action="">
-			<!-- No label -->
-			<input id="input" name="input" value="" />
-			<!-- No submit -->
-		</form>
 	</div>
+
 </body>
 </html>

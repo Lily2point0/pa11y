@@ -1,24 +1,33 @@
 // An example of running Pa11y programmatically
 'use strict';
 
-var pa11y = require('../..');
+const pa11y = require('../..');
 
-// Create a test instance with some default options
-var test = pa11y({
+runExample();
 
-	// Log what's happening to the console
-	log: {
-		debug: console.log.bind(console),
-		error: console.error.bind(console),
-		info: console.log.bind(console)
+// Async function required for us to use await
+async function runExample() {
+	try {
+
+		// Test http://example.com/
+		const result = await pa11y('http://example.com/', {
+
+			// Log what's happening to the console
+			log: {
+				debug: console.log,
+				error: console.error,
+				info: console.log
+			}
+
+		});
+
+		// Output the raw result object
+		console.log(result);
+
+	} catch (error) {
+
+		// Output an error if it occurred
+		console.error(error.message);
+
 	}
-
-});
-
-// Test http://nature.com/
-test.run('nature.com', function(error, result) {
-	if (error) {
-		return console.error(error.message);
-	}
-	console.log(result);
-});
+}

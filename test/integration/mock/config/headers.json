@@ -1,7 +1,6 @@
 {
-	"page": {
-		"headers": {
-			"foo": "bar"
-		}
+	"headers": {
+		"foo": "bar",
+		"bar": "baz"
 	}
 }
